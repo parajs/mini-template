@@ -1,13 +1,43 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <view class='banner'>
+    <swiper autoplay="{{autoplay}}" indicator-dots="{{indicatorDots}}" >
+        <swiper-item>
+          <image lazy-load='true'  src="/assets/banner_1.jpg" mode="widthFix" class="slide-image"/>
+        </swiper-item>
+        <swiper-item>
+          <image lazy-load='true' src="/assets/banner_1.jpg" mode="widthFix" class="slide-image"/>
+        </swiper-item>
+    </swiper>
+    <view class="search-box">
+      <input class="search-input" 
+      bindfocus="bindfocus" 
+      bindinput="bindinput" 
+      bindconfirm="bindconfirm"/>
+      <view class="search-tips" wx-if="{{isVisible}}">
+        <image class="search-png"  lazy-load='true' src="/assets/search.png" mode="widthFix" /> 
+        <text>搜索房源</text>
+      </view>
+    </view>
+  </view>   
+  <view>
+    <view class="toutiao">
+      <view class="flexBox">
+        <view class="toutiaoLeft">
+          <image class="toutiao-png" mode="widthFix" lazy-load='true' src="/assets/toutiao.png"  /> 
+        </view>
+        <view class="flexItem">
+          <view>
+          *我不在进的扔 震我不在进的
+          </view>
+           <view>
+          *我不在进的扔 震我不在进的扔 
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="house">
+    
+    </view>
+  </view> 
 </view>

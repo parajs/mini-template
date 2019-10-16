@@ -5,10 +5,9 @@ import { findTopMemorialList } from '../../api/index'
 import { Http, REQUEST } from 'miniprogram-request';
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    autoplay: true,
+    indicatorDots: false,
+    isVisible: true
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,35 +16,30 @@ Page({
     })
   },
   onLoad: function () {
- 
     findTopMemorialList({ orderBy: 1}).then((result)=>{
     })
-    if (app.globalData.userInfo) {
+    
+  },
+  bindconfirm(){
+
+  },
+  bindfocus(){
+    this.setData({
+      isVisible: false
+    })
+  },
+  bindinput(e){
+    const { value } = e.detail
+    if (!value){
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        isVisible: true
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+    }else{
+      this.setData({
+        isVisible: false
       })
     }
+   
   },
   getUserInfo: function(e) {
     console.log(e)
