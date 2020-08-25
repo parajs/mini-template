@@ -16,7 +16,7 @@
       bindconfirm="bindconfirm"/>
       <view class="search-tips" wx-if="{{isVisible}}">
         <image class="search-png"  lazy-load='true' src="/assets/search.png" mode="widthFix" /> 
-        <text>搜索房源</text>
+        <text>搜索</text>
       </view>
     </view>
   </view>   
