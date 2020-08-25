@@ -2,7 +2,6 @@
 //获取应用实例
 const app = getApp()
 import { findTopMemorialList } from '../../api/index'
-import { Http, REQUEST } from 'miniprogram-request';
 Page({
   data: {
     autoplay: true,
