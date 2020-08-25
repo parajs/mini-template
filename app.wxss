@@ -179,6 +179,14 @@ page {
   text-align: center;
 }
 
+
+.card-box {
+  background: #fff;
+  padding: 12px;
+  box-shadow: 2px 4px 4px rgba(156, 156, 156, 0.1);
+  border-radius: 8px;
+}
+
 .flexBox {
   display: flex;
 }
