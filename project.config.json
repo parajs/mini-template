@@ -15,7 +15,7 @@
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
-			"ignore": [],
+			"ignore": ["miniprogram_npm"],
 			"disablePlugins": [],
 			"outputPath": ""
 		}
